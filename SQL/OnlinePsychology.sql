@@ -154,67 +154,41 @@ GO
 
 INSERT INTO LanguageNames
 VALUES
-	('Українська'),
-	('Російська'),
-	('Англійська'),
-	('Французька'),
-	('Німецька'),
-	('Турецька')
+	('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'),
+	('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'),
+	('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'),
+	('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'),
+	('НіпїЅпїЅпїЅпїЅпїЅпїЅ'),
+	('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ')
 	;
 GO
 
 INSERT INTO TherapyTypes
 VALUES
-	('Індивідуальна')
 	;
 GO
 
 INSERT INTO TherapyMethods
 VALUES
-	('Консультація'),
-	('Арт'),
-	('Гештальт'),
-	('Наративна'),
-	('Психоаналіз')
+
 	;
 GO
 
 INSERT INTO DataSupervs 
 VALUES
-	('Арсенюк','Степан','Романович',1,'1976-06-13',1,70,'arseniuk@ukr.net'),
-	('Гонтарєва','Валерія','Олексіївна',0,'1960-01-12',2,40,'hontareva@hotmail.com'),
-	('Пейдж','Алі',NULL,1,'1990-12-07',6,80,'page@turkey.tr')
+
 	;
 GO
 
 
 INSERT INTO DataDoctors
 VALUES
-	('Бурятов','Олексій','Олексійович',1,'2002-02-05',1,50,3,1,'alexei.buriatov@gmail.com'),
-	('Мороз','Аліса','Максимівна',0,'1999-09-06',2,50,1,2,'moroz_al@yandex.ru'),
-	('Панченко','Катерина','Миколаївна',0,'1980-09-16',3,90,5,2,'panchenko@ukr.net'),
-	('Приходько','Оксана','Михайлівна',0,'1975-01-09',4,60,3,1,'pryhodko@gmail.com'),
-	('Супрун','Максим','Данилович',1,'2001-09-05',5,49,4,1,'maksik@suprme.com'),
-	('Калинка','Жанна','Іванівна',0,'1976-06-13',6,150,3,3,'zhannetka@turkey.tr'),
-	('Бісик','Валерія','Олексіївна',0,'1999-09-06',3,50,2,1,'bisyk@gmail.com')
 	;
 GO
 
 INSERT INTO DataClients
 VALUES
-	('Кондро','Ігор','Володимирович',1,'1980-05-01',1,'igor@gmail.com'),
-	('Ганок','Руслан','Володимирович',1,'1984-06-03',1,'ganok@outlook.com'),
-	('Скиба','Володимир','Володимирович',1,'1977-01-01',1,'skyba@ukr.net'),
-	('Вотик','Орест','Дмитрович',1,'1956-09-09',1,'134a@inet.net'),
-	('Сорокіна','Юнона','Володимирівна',0,'1999-05-01',2,'krasotka@hotmail.com'),
-	('Авдєєва','Тетяна','Володимирівна',0,'1980-05-01',2,'avdeeva@sobaka.net'),
-	('Джермантона','Стефані',NULL,0,'1980-05-01',3,'gaga@gaga.com'),
-	('Спірс','Брітні',NULL,0,'1980-05-01',3,'britney@gmail.com'),
-	('Чиккал','Мадонна',NULL,0,'1980-05-01',3,'madonna@gmail.com'),
-	('Фішер','Хелена',NULL,0,'1964-07-03',5,'helena@gmail.com'),
-	('Авер','Поль','Ван',1,'1997-05-02',4,'aver@gmail.com'),
-	('Каас','Патрісія',NULL,0,'1952-01-10',4,'patricia@kaas.com'),
-	('Боз','Мурат',NULL,1,'1970-05-11',6,'murat@turkey.tr');
+
 GO
 
 INSERT INTO SupAnDocMeetings
@@ -246,20 +220,20 @@ DROP PROCEDURE SlctDoctorsByLName
 CREATE PROCEDURE SlctDoctorsByLName
 @LastN NVARCHAR(255) 
 AS
-SELECT DISTINCT dd.DoctorID AS'Доктор ID',
-	dd.DoctorFName AS 'Ім''я',
-	dd.DoctorPatronymic AS 'По-батькові',
-		dd.DoctorLName AS 'Прізвище',
-	[dbo].gender(dd.DoctorSex) AS 'Стать',
-	dd.DoctorDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	dd.HourlyRate AS 'Оплата/год.',
-	tm.TherapyMethod AS 'Метод терапії',
-	ds.SupervID 'Супервізор ID',
-	ds.SupervFName 'Прізвище',
-	ds.SupervLName 'Ім''я',
-	ds.SupervPatronymic 'По-батькові',
-	dd.DoctorMail AS 'Пошта'
+SELECT DISTINCT dd.DoctorID AS'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ',
+	dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+		dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(dd.DoctorSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	tm.TherapyMethod AS 'пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName 'пїЅпїЅ''пїЅ',
+	ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataDoctors dd
 JOIN LanguageNames ln ON ln.LanguageID=dd.DoctorLanguage
 JOIN TherapyMethods tm ON dd.TherapyMethod=tm.TherapyID
@@ -272,15 +246,15 @@ DROP PROCEDURE SlctSupervByLName
 CREATE PROCEDURE SlctSupervByLName
 @LastN NVARCHAR(255)
 AS
-SELECT ds.SupervID 'Супервізор ID',
-	ds.SupervLName 'Ім''я',
-		ds.SupervPatronymic 'По-батькові',
-	ds.SupervFName 'Прізвище',
-	[dbo].gender(ds.SupervSex) AS 'Стать',
-	ds.SupervDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	ds.HourlyRate AS 'Оплата/год.',
-	ds.SupervMail AS 'Пошта'
+SELECT ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervLName 'пїЅпїЅ''пїЅ',
+		ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervFName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(ds.SupervSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	ds.SupervMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataSupervs ds
 JOIN LanguageNames ln ON ln.LanguageID=ds.SupervLanguage
 WHERE ds.SupervLName=@LastN
@@ -291,14 +265,14 @@ DROP PROCEDURE SlctClientByLName
 CREATE PROCEDURE SlctClientByLName
 @LastN NVARCHAR(255)
 AS
-SELECT ClientID AS'Клієнт ID',
-	ClientFName AS 'Ім''я',
-	ClientPatronymic AS 'По-батькові',
-		ClientLName AS 'Прізвище',
-	[dbo].gender(ClientSex) AS 'Стать',
-	ClientDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	ClientMail AS 'Пошта'
+SELECT ClientID AS'пїЅлієпїЅпїЅ ID',
+	ClientFName AS 'пїЅпїЅ''пїЅ',
+	ClientPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+		ClientLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(ClientSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	ClientDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ClientMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataClients d
 JOIN LanguageNames ln ON ln.LanguageID=d.ClientLanguage
 WHERE ClientLName=@LastN
@@ -309,20 +283,20 @@ DROP PROCEDURE SlctDoctorsByID
 CREATE PROCEDURE SlctDoctorsByID
 @Ident INT 
 AS
-SELECT DISTINCT dd.DoctorID AS'Доктор ID',
-	dd.DoctorLName AS 'Прізвище',
-	dd.DoctorFName AS 'Ім''я',
-	dd.DoctorPatronymic AS 'По-батькові',
-	[dbo].gender(dd.DoctorSex) AS 'Стать',
-	dd.DoctorDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	dd.HourlyRate AS 'Оплата/год.',
-	tm.TherapyMethod AS 'Метод терапії',
-	ds.SupervID 'Супервізор ID',
-	ds.SupervFName 'Прізвище',
-	ds.SupervLName 'Ім''я',
-	ds.SupervPatronymic 'По-батькові',
-	dd.DoctorMail AS 'Пошта'
+SELECT DISTINCT dd.DoctorID AS'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ',
+	dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(dd.DoctorSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	tm.TherapyMethod AS 'пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName 'пїЅпїЅ''пїЅ',
+	ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataDoctors dd
 JOIN LanguageNames ln ON ln.LanguageID=dd.DoctorLanguage
 JOIN TherapyMethods tm ON dd.TherapyMethod=tm.TherapyID
@@ -336,15 +310,15 @@ DROP PROCEDURE SlctSupervByID
 CREATE PROCEDURE SlctSupervByID
 @Ident INT
 AS
-SELECT ds.SupervID 'Супервізор ID',
-	ds.SupervFName 'Ім''я',
-	ds.SupervPatronymic 'По-батькові',
-	ds.SupervLName 'Прізвище',
-	[dbo].gender(ds.SupervSex) AS 'Стать',
-	ds.SupervDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	ds.HourlyRate AS 'Оплата/год.',
-	ds.SupervMail AS 'Пошта'
+SELECT ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName 'пїЅпїЅ''пїЅ',
+	ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(ds.SupervSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	ds.SupervMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataSupervs ds
 JOIN LanguageNames ln ON ln.LanguageID=ds.SupervLanguage
 WHERE ds.SupervID=@Ident
@@ -354,15 +328,15 @@ GO
 CREATE PROCEDURE SlctSupervByName
 @Ident NVARCHAR(255)
 AS
-SELECT ds.SupervID 'Супервізор ID',
-	ds.SupervFName 'Ім''я',
-	ds.SupervPatronymic 'По-батькові',
-	ds.SupervLName 'Прізвище',
-	[dbo].gender(ds.SupervSex) AS 'Стать',
-	ds.SupervDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	ds.HourlyRate AS 'Оплата/год.',
-	ds.SupervMail AS 'Пошта'
+SELECT ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName 'пїЅпїЅ''пїЅ',
+	ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(ds.SupervSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	ds.SupervMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataSupervs ds
 JOIN LanguageNames ln ON ln.LanguageID=ds.SupervLanguage
 WHERE ds.SupervLName=@Ident
@@ -374,14 +348,14 @@ GO
 CREATE PROCEDURE SlctClientByID
 @Ident INT
 AS
-SELECT ClientID AS'Клієнт ID',
-	ClientFName AS 'Ім''я',
-	ClientLName AS 'Прізвище',
-	ClientPatronymic AS 'По-батькові',
-	[dbo].gender(ClientSex) AS 'Стать',
-	ClientDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	ClientMail AS 'Пошта'
+SELECT ClientID AS'пїЅлієпїЅпїЅ ID',
+	ClientFName AS 'пїЅпїЅ''пїЅ',
+	ClientLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ClientPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(ClientSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	ClientDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ClientMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataClients d
 JOIN LanguageNames ln ON ln.LanguageID=d.ClientLanguage
 WHERE ClientID=@Ident
@@ -429,7 +403,6 @@ AS
 GO
 
 
-EXEC AddClient 'Дмитро', 'Сергійович','Новокрестов', 1,'28-02-2002', 1, 'dimochka@gmail.com';
 EXEC SlctAllClients
 
 CREATE PROCEDURE AddDoctor
@@ -452,7 +425,6 @@ AS
 	;
 GO
 
-EXEC AddDoctor 'Михайло', 'Валентинович','Незабудько', 1, '11-12-1991', 1, 59,2,1,'nezabudka@ukr.net' ;
 EXEC SlctAllDoctors;
 
 
@@ -473,7 +445,6 @@ AS
 	;
 GO
 
-EXEC AddSuperv'Андрій', 'Олегович','Здоровий', 1, '11-12-1991', 1, 120,'healthydoctor@ukr.net' ;
 EXEC SlctAllSuperv;
 
 
@@ -515,22 +486,22 @@ AS
 BEGIN
 	DECLARE
 		@GENDER NVARCHAR(10)
-	SET @GENDER='Чоловіча'
+	SET @GENDER='пїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 	IF(@SexID=0)
-		SET @GENDER='Жіноча'
+		SET @GENDER='ЖіпїЅпїЅпїЅпїЅ'
 	RETURN @GENDER
 END
 
 CREATE PROCEDURE SlctAllClients
 AS
-SELECT ClientID AS'Клієнт ID',
-	ClientFName AS 'Ім''я',
-	ClientPatronymic AS 'По-батькові',
-	ClientLName AS 'Прізвище',
-	[dbo].gender(ClientSex) AS 'Стать',
-	ClientDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	ClientMail AS 'Пошта'
+SELECT ClientID AS'пїЅлієпїЅпїЅ ID',
+	ClientFName AS 'пїЅпїЅ''пїЅ',
+	ClientPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ClientLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(ClientSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	ClientDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ClientMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataClients d
 JOIN LanguageNames ln ON ln.LanguageID=d.ClientLanguage
 ;
@@ -543,20 +514,20 @@ GO
 DROP PROCEDURE SlctAllDoct
 CREATE PROCEDURE SlctAllDoct
 AS
-SELECT DISTINCT dd.DoctorID AS'Доктор ID',
-	dd.DoctorFName AS 'Ім''я',
-	dd.DoctorPatronymic AS 'По-батькові',
-	dd.DoctorLName AS 'Прізвище',
-	[dbo].gender(dd.DoctorSex) AS 'Стать',
-	dd.DoctorDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	dd.HourlyRate AS 'Оплата/год.',
-	tm.TherapyMethod AS 'Метод терапії',
-	ds.SupervID 'Супервізор ID',
-	ds.SupervFName 'Ім''я супервізора',
-	ds.SupervPatronymic 'По-батькові супервізора',
-	ds.SupervLName 'Прізвище супервізора',
-	dd.DoctorMail AS 'Пошта'
+SELECT DISTINCT dd.DoctorID AS'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ',
+	dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(dd.DoctorSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	tm.TherapyMethod AS 'пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName 'пїЅпїЅ''пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataDoctors dd
 JOIN LanguageNames ln ON ln.LanguageID=dd.DoctorLanguage
 JOIN TherapyMethods tm ON dd.TherapyMethod=tm.TherapyID
@@ -567,20 +538,20 @@ GO
 CREATE PROCEDURE SlctDoctByID
 @DoctorID INT
 AS
-SELECT DISTINCT dd.DoctorID AS'Доктор ID',
-	dd.DoctorFName AS 'Ім''я',
-	dd.DoctorPatronymic AS 'По-батькові',
-	dd.DoctorLName AS 'Прізвище',
-	[dbo].gender(dd.DoctorSex) AS 'Стать',
-	dd.DoctorDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	dd.HourlyRate AS 'Оплата/год.',
-	tm.TherapyMethod AS 'Метод терапії',
-	ds.SupervID 'Супервізор ID',
-	ds.SupervFName 'Ім''я супервізора',
-	ds.SupervPatronymic 'По-батькові супервізора',
-	ds.SupervLName 'Прізвище супервізора',
-	dd.DoctorMail AS 'Пошта'
+SELECT DISTINCT dd.DoctorID AS'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ',
+	dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(dd.DoctorSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	tm.TherapyMethod AS 'пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName 'пїЅпїЅ''пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataDoctors dd
 JOIN LanguageNames ln ON ln.LanguageID=dd.DoctorLanguage
 JOIN TherapyMethods tm ON dd.TherapyMethod=tm.TherapyID
@@ -595,15 +566,15 @@ GO
 DROP PROCEDURE SlctAllSuperv
 CREATE PROCEDURE SlctAllSuperv
 AS
-SELECT ds.SupervID 'Супервізор ID',
-	ds.SupervFName 'Ім''я',
-		ds.SupervPatronymic 'По-батькові',
-	ds.SupervLName 'Прізвище',
-	[dbo].gender(ds.SupervSex) AS 'Стать',
-	ds.SupervDateOfBirth AS 'Дата народження',
-	ln.LanguageName AS 'Мова спілкування',
-	ds.HourlyRate AS 'Оплата/год.',
-	ds.SupervMail AS 'Пошта'
+SELECT ds.SupervID 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName 'пїЅпїЅ''пїЅ',
+		ds.SupervPatronymic 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[dbo].gender(ds.SupervSex) AS 'пїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervDateOfBirth AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ln.LanguageName AS 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅ.',
+	ds.SupervMail AS 'пїЅпїЅпїЅпїЅпїЅ'
 FROM DataSupervs ds
 JOIN LanguageNames ln ON ln.LanguageID=ds.SupervLanguage
 	;
@@ -613,18 +584,18 @@ GO
 DROP PROCEDURE SlctAllMeetings
 CREATE PROCEDURE SlctAllMeetings
 AS
-SELECT m.Identifier AS 'Ідентифікатор',
-	m.ClientID AS 'Клієнт ID',
-	dc.ClientFName AS 'Ім''я',
-		dc.ClientPatronymic AS 'По-батькові',
-	dc.ClientLName AS 'Прізвище',
-	dd.DoctorID AS 'Доктор ID',
-	dd.DoctorFName AS 'Ім''я лікаря',
-		dd.DoctorPatronymic AS 'По-батькові лікаря',
-	dd.DoctorLName AS 'Прізвище лікаря',
-	tt.TherapyType AS 'Тип терапії',
-	m.SessionBegin AS 'Початок терапії',
-	m.SessionEnd AS 'Кінець терапії'
+SELECT m.Identifier AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	m.ClientID AS 'пїЅлієпїЅпїЅ ID',
+	dc.ClientFName AS 'пїЅпїЅ''пїЅ',
+		dc.ClientPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dc.ClientLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorID AS 'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ пїЅпїЅпїЅпїЅпїЅ',
+		dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ',
+	tt.TherapyType AS 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	m.SessionBegin AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	m.SessionEnd AS 'КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії'
 FROM Meetings m
 JOIN TherapyTypes tt ON tt.TherapyID= m.TherapyType
 JOIN DataClients dc ON dc.ClientID=m.ClientID
@@ -635,18 +606,18 @@ GO
 CREATE PROCEDURE SlctAllMeetingsByClientID
 @ClientID INT
 AS
-SELECT m.Identifier AS 'Ідентифікатор',
-	m.ClientID AS 'Клієнт ID',
-	dc.ClientFName AS 'Ім''я',
-		dc.ClientPatronymic AS 'По-батькові',
-	dc.ClientLName AS 'Прізвище',
-	dd.DoctorID AS 'Доктор ID',
-	dd.DoctorFName AS 'Ім''я лікаря',
-		dd.DoctorPatronymic AS 'По-батькові лікаря',
-	dd.DoctorLName AS 'Прізвище лікаря',
-	tt.TherapyType AS 'Тип терапії',
-	m.SessionBegin AS 'Початок терапії',
-	m.SessionEnd AS 'Кінець терапії'
+SELECT m.Identifier AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	m.ClientID AS 'пїЅлієпїЅпїЅ ID',
+	dc.ClientFName AS 'пїЅпїЅ''пїЅ',
+		dc.ClientPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dc.ClientLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorID AS 'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ пїЅпїЅпїЅпїЅпїЅ',
+		dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ',
+	tt.TherapyType AS 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	m.SessionBegin AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії',
+	m.SessionEnd AS 'КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпії'
 FROM Meetings m
 JOIN TherapyTypes tt ON tt.TherapyID= m.TherapyType
 JOIN DataClients dc ON dc.ClientID=m.ClientID
@@ -659,18 +630,18 @@ EXEC SlctAllMeetingsByClientID 6
 
 CREATE PROCEDURE SlctAllSupAndDocMeetings
 AS
-SELECT m.Identifier AS 'Ідентифікатор',
+SELECT m.Identifier AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
 
-	dd.DoctorID AS 'Доктор ID',
-	dd.DoctorFName AS 'Ім''я',
-	dd.DoctorPatronymic AS 'По-батькові',
-	dd.DoctorLName AS 'Прізвище',
-	ds.SupervID AS 'Супервізор ID',
-	ds.SupervFName AS 'Ім''я супервізора',
-	ds.SupervPatronymic AS 'По-батькові супервізора',
-	ds.SupervLName AS 'Прізвище супревізора',
-	m.SessionBegin AS 'Початок сеансу',
-	m.SessionEnd AS 'Кінець сеансу'
+	dd.DoctorID AS 'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ',
+	dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervID AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName AS 'пїЅпїЅ''пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	m.SessionBegin AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ',
+	m.SessionEnd AS 'КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ'
 FROM SupAnDocMeetings m
 JOIN DataSupervs ds ON ds.SupervID=m.SupervisorID
 JOIN DataDoctors dd ON dd.DoctorID=m.DoctorID
@@ -681,18 +652,18 @@ GO
 CREATE PROCEDURE SlctAllSupAndDocMeetingsByDoctorID
 @DoctorID INT
 AS
-SELECT m.Identifier AS 'Ідентифікатор',
+SELECT m.Identifier AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
 
-	dd.DoctorID AS 'Доктор ID',
-	dd.DoctorFName AS 'Ім''я',
-	dd.DoctorPatronymic AS 'По-батькові',
-	dd.DoctorLName AS 'Прізвище',
-	ds.SupervID AS 'Супервізор ID',
-	ds.SupervFName AS 'Ім''я супервізора',
-	ds.SupervPatronymic AS 'По-батькові супервізора',
-	ds.SupervLName AS 'Прізвище супревізора',
-	m.SessionBegin AS 'Початок сеансу',
-	m.SessionEnd AS 'Кінець сеансу'
+	dd.DoctorID AS 'пїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	dd.DoctorFName AS 'пїЅпїЅ''пїЅ',
+	dd.DoctorPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	dd.DoctorLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervID AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID',
+	ds.SupervFName AS 'пїЅпїЅ''пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervPatronymic AS 'пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	ds.SupervLName AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	m.SessionBegin AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ',
+	m.SessionEnd AS 'КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ'
 FROM SupAnDocMeetings m
 JOIN DataSupervs ds ON ds.SupervID=m.SupervisorID
 JOIN DataDoctors dd ON dd.DoctorID=m.DoctorID
@@ -782,20 +753,20 @@ GO
 
 CREATE PROCEDURE SlctSupervsIDName
 AS
-SELECT SupervID AS 'СупервізорID',
-	CONCAT(SupervFName,' ',SupervPatronymic,' ',SupervLName) AS 'ПІБ' 
+SELECT SupervID AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅID',
+	CONCAT(SupervFName,' ',SupervPatronymic,' ',SupervLName) AS 'ПІпїЅ' 
 FROM DataSupervs
 
 CREATE PROCEDURE SlctDoctorsIDName
 AS
-SELECT DoctorID AS 'ДокторID',
-	CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІБ' 
+SELECT DoctorID AS 'пїЅпїЅпїЅпїЅпїЅпїЅID',
+	CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІпїЅ' 
 FROM DataDoctors
 
 CREATE PROCEDURE SlctClientsIDName
 AS
 SELECT ClientID AS 'ClientID',
-	CONCAT(ClientFName,' ',ClientPatronymic,' ',ClientLName) AS 'ПІБ' 
+	CONCAT(ClientFName,' ',ClientPatronymic,' ',ClientLName) AS 'ПІпїЅ' 
 FROM DataClients
 
 
@@ -817,20 +788,20 @@ GO
 
 CREATE VIEW AllMeetings
 AS
-	SELECT Identifier AS 'Ідентифікатор',
+	SELECT Identifier AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
 		ClientID AS 'PatientID',
 		DoctorID AS 'DoctorID',
-		SessionBegin AS 'Початок сесії',
-		SessionEnd AS 'Кінець сесії',
-		'Клієнт' AS 'Хто лікувався'
+		SessionBegin AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ',
+		SessionEnd AS 'КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ',
+		'пїЅлієпїЅпїЅ' AS 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 	FROM Meetings
 UNION ALL
-	SELECT Identifier AS 'Ідентифікатор',
+	SELECT Identifier AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
 		DoctorID AS 'PatientID',
 		SupervisorID AS 'DoctorID',
-		SessionBegin AS 'Початок сесії',
-		SessionEnd AS 'Кінець сесії',
-		'Лікар' AS 'Хто лікувався'
+		SessionBegin AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ',
+		SessionEnd AS 'КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ',
+		'ЛіпїЅпїЅпїЅ' AS 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 	FROM  SupAnDocMeetings
 
 SELECT * FROM AllMeetings
@@ -907,34 +878,34 @@ FROM DELETED
 
 CREATE VIEW CurrentMeeting
 AS
-SELECT Ідентифікатор,
+SELECT пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ,
 	PatientID,
 	CASE 
-		WHEN [Хто лікувався]='Клієнт' THEN (
-			SELECT CONCAT(ClientFName,' ',ClientPatronymic,' ',ClientLName) AS 'ПІБ'
+		WHEN [пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ]='пїЅлієпїЅпїЅ' THEN (
+			SELECT CONCAT(ClientFName,' ',ClientPatronymic,' ',ClientLName) AS 'ПІпїЅ'
 			FROM DataClients
 			WHERE ClientID=PatientID)
-		WHEN [Хто лікувався]='Лікар' THEN (
-			SELECT CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІБ'
+		WHEN [пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ]='ЛіпїЅпїЅпїЅ' THEN (
+			SELECT CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІпїЅ'
 			FROM DataDoctors
 			WHERE DoctorID=PatientID)
-	END AS 'ПІБ Пацієнта',
+	END AS 'ПІпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
 	meet.DoctorID,
 		CASE 
-		WHEN [Хто лікувався]='Клієнт' THEN (
-			SELECT CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІБ'
+		WHEN [пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ]='пїЅлієпїЅпїЅ' THEN (
+			SELECT CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІпїЅ'
 			FROM DataDoctors
 			WHERE meet.DoctorID=DoctorID)
-		WHEN [Хто лікувався]='Лікар' THEN (
-			SELECT CONCAT(SupervFName,' ',SupervPatronymic,' ',SupervLName) AS 'ПІБ' 
+		WHEN [пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ]='ЛіпїЅпїЅпїЅ' THEN (
+			SELECT CONCAT(SupervFName,' ',SupervPatronymic,' ',SupervLName) AS 'ПІпїЅ' 
 			FROM DataSupervs
 			WHERE meet.DoctorID=SupervID)
-	END AS 'ПІБ Лікаря',
-	[Хто лікувався] AS 'Хто лікується',
-	[Початок сесії],
-	[Кінець сесії]
+	END AS 'ПІпїЅ ЛіпїЅпїЅпїЅпїЅ',
+	[пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ] AS 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+	[пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ],
+	[КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ]
 FROM AllMeetings meet
-WHERE [Кінець сесії]>GETDATE()
+WHERE [КіпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ]>GETDATE()
 
 EXEC AddSupAndDocMeeting 2
 SELECT * FROM CurrentMeeting
@@ -946,9 +917,9 @@ RETURNS TABLE
 AS
 RETURN
 (
-	SELECT DISTINCT DoctorID AS 'ЛікарID',
-		CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІБ',
-		HourlyRate AS 'Погодинна оплата'
+	SELECT DISTINCT DoctorID AS 'ЛіпїЅпїЅпїЅID',
+		CONCAT(DoctorFName,' ',DoctorPatronymic,' ',DoctorLName) AS 'ПІпїЅ',
+		HourlyRate AS 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ'
 	FROM DataDoctors 
 	WHERE HourlyRate BETWEEN @priceFrom AND @priceTo
 );
